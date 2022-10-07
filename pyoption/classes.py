@@ -17,9 +17,10 @@ class ExerciseType(Enum):
 class Option:
     option_type = None
 
-    def __init__(self, exercise_price, exercise_type=ExerciseType.EUROPEAN):
+    def __init__(self, exercise_price, time_to_expiration=None, exercise_type=ExerciseType.EUROPEAN):
         self.exercise_price = exercise_price
         self.exercise_type = exercise_type
+        self.time_to_expiration = time_to_expiration
 
     def __repr__(self):
         return f"{self.option_type.name.capitalize()}Option(exercise_price={self.exercise_price}, exercise_type={self.exercise_type.name})"
